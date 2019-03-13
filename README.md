@@ -12,13 +12,13 @@ veces, por este motivo, ahora los metodos incluyen un parametro de salida a modo
 - para la implementacion de los diccionarios no encontre sentido logico a las operaciones de sort por lo que se usa una lista para evidenciar su ejecucion 
 
 Para la realizacion de este taller se consulto acerca de: 
-    - Interfaces
-    - Clases y Metodos Genericos
-    - Sobrecarga de operadores 
-    - Estructuras de datos 
-    - LinQ
-    - Delegados 
-    - Tipos de Datos
+- Interfaces
+- Clases y Metodos Genericos
+- Sobrecarga de operadores 
+- Estructuras de datos 
+- LinQ
+- Delegados 
+- Tipos de Datos
     
 Faltantes: 
     Perfect Shuffle Dictionary 
