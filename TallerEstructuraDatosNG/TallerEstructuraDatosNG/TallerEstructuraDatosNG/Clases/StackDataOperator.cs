@@ -17,18 +17,13 @@ namespace TallerEstructuraDatosNG.Clases
             this.ints = ints;
             this.floats = floats;
             this.slots = slots;
-
-            Console.WriteLine("se creo un operado con los sigientes datos :");
-            Console.WriteLine("\n Stack de enteros : \n" + IntsToString(this.ints)+"\n");
-            Console.WriteLine("\n Stack de flotantes : \n" + FloatsToString(this.floats) + "\n");
-            Console.WriteLine("\n Stack de itemsSlot : \n" + SlotsToString(this.slots) + "\n");
         }
 
         public Stack<int> Ints { get => ints; }
         public Stack<float> Floats { get => floats;  }
         public Stack<Itemslot> Slots { get => slots;  }
 
-        public string IntsToString(Stack<int> ts)
+        public string StackIntToString(Stack<int> ts)
         {
             string data = "";
             Stack<int> toprint = new Stack<int>(ts);
@@ -39,18 +34,18 @@ namespace TallerEstructuraDatosNG.Clases
             }
             return data;
         }
-        public string FloatsToString(Stack<float> ts)
+        public string StackFloatToString(Stack<float> ts)
         {
             string data = "";
             Stack<float> toprint = new Stack<float>(ts);
 
             while (toprint.Count > 0)
             {
-                data += toprint.Pop().ToString("00.00") + ", ";
+                data += toprint.Pop().ToString() + ", ";
             }
             return data;
         }
-        public string SlotsToString(Stack<Itemslot> ts)
+        public string StackSlotToString(Stack<Itemslot> ts)
         {
             string data = "";
             Stack<Itemslot> toprint = new Stack<Itemslot>(ts);
@@ -116,7 +111,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = true;
                 t =  final;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(StackIntToString(t));
             }
 
         }
@@ -145,7 +140,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(StackIntToString(t));
             }
         }
         public void RemoveOdds(out bool success, out Stack<int> t)
@@ -174,7 +169,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(StackIntToString(t));
             }
         }
         public void Shuffle(out bool success, out Stack<int> t)
@@ -188,7 +183,7 @@ namespace TallerEstructuraDatosNG.Clases
                 Random rnd = new Random();
                 success = true;
                 t = new Stack<int>(ts.OrderBy(x => rnd.Next()));
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(StackIntToString(t));
             }
         }
         public void SortAscending(out bool success, out Stack<int> t)
@@ -212,7 +207,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = true;
                 t = ss;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(StackIntToString(t));
             }
         }
         public void SortDescending(out bool success, out Stack<int> t)
@@ -236,7 +231,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = true;
                 t = ss;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(StackIntToString(t));
             }
         }
         #endregion
@@ -295,8 +290,8 @@ namespace TallerEstructuraDatosNG.Clases
                 }
 
                 success = true;
-                t = final;
-                Console.WriteLine(FloatsToString(t));
+                t = ts;
+                Console.WriteLine(StackFloatToString(t));
             }
 
         }
@@ -324,7 +319,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(StackFloatToString(t));
             }
         }
         public void RemoveOdds(out bool success, out Stack<float> t)
@@ -352,7 +347,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(StackFloatToString(t));
             }
         }
         public void Shuffle(out bool success, out Stack<float> t)
@@ -366,7 +361,7 @@ namespace TallerEstructuraDatosNG.Clases
                 Random rnd = new Random();
                 success = true;
                 t = new Stack<float>(ts.OrderBy(x => rnd.Next()));
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(StackFloatToString(t));
             }
         }
         public void SortAscending(out bool success, out Stack<float> t)
@@ -390,7 +385,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = true;
                 t = ss;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(StackFloatToString(t));
             }
         }
         public void SortDescending(out bool success, out Stack<float> t)
@@ -414,7 +409,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = true;
                 t = ss;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(StackFloatToString(t));
             }
         }
         #endregion
@@ -472,8 +467,8 @@ namespace TallerEstructuraDatosNG.Clases
                     final.Push(ts.Pop());
                 }
                 success = true;
-                t = final;
-                Console.WriteLine(SlotsToString(t));
+                t = ts;
+                Console.WriteLine(StackSlotToString(t));
             }
 
         }
@@ -501,7 +496,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(StackSlotToString(t));
             }
         }
         public void RemoveOdds(out bool success, out Stack<Itemslot> t)
@@ -528,7 +523,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(StackSlotToString(t));
             }
         }
         public void Shuffle(out bool success, out Stack<Itemslot> t)
@@ -542,7 +537,7 @@ namespace TallerEstructuraDatosNG.Clases
                 Random rnd = new Random();
                 success = true;
                 t = new Stack<Itemslot>(ts.OrderBy(x => rnd.Next()));
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(StackSlotToString(t));
             }
         }
         public void SortAscending(out bool success, out Stack<Itemslot> t)
@@ -566,7 +561,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = true;
                 t = ss;
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(StackSlotToString(t));
             }
         }
         public void SortDescending(out bool success, out Stack<Itemslot> t)
@@ -590,29 +585,12 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = true;
                 t = ss;
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(StackSlotToString(t));
             }
         }
         #endregion
 
-        public void PrintOriginal(Type type)
-        {
-            if (type == typeof(Stack<int>))
-            {
-                Console.WriteLine("El Stack Original es :");
-                Console.WriteLine(IntsToString(ints));
-            }
-            if (type == typeof(Stack<float>))
-            {
-                Console.WriteLine("El Stack Original es :");
-                Console.WriteLine(FloatsToString(floats));
-            }
-            if (type == typeof(Stack<Itemslot>))
-            {
-                Console.WriteLine("El Stack Original es :");
-                Console.WriteLine(SlotsToString(slots));
-            }
-        }
+
 
     }
 }

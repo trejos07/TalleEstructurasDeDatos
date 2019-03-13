@@ -36,12 +36,12 @@ namespace TallerEstructuraDatosNG.Clases
 
                 if (randomData)
                 {
-                RandomFloat random = new RandomFloat();
-                for (int i = 0; i < ts.Length; i++)
-                    {
                     
-                        ts[i] = random.NextFloat(0, maxNumber);
-                }
+                    for (int i = 0; i < ts.Length; i++)
+                    {
+                        float toAdd = GenRandFloat(0, maxNumber);
+                        ts[i] = toAdd;
+                    }
                 }
                 else
                 {
@@ -66,6 +66,7 @@ namespace TallerEstructuraDatosNG.Clases
             return ts;
 
         }
+
 
         public static List<int> PopulateList(int size, int maxNumber, bool randomData = false)
         {
@@ -94,11 +95,11 @@ namespace TallerEstructuraDatosNG.Clases
 
             if (randomData)
             {
-                RandomFloat random = new RandomFloat();
+                Random random = new Random();
                 for (int i = 0; i < size; i++)
                 {
-                    
-                    ts.Add(random.NextFloat(0, maxNumber));
+                    float toAdd = GenRandFloat(0, maxNumber);
+                    ts.Add(toAdd);
                 }
             }
             else
@@ -150,11 +151,10 @@ namespace TallerEstructuraDatosNG.Clases
             Queue<float> ts = new Queue<float>();
             if (randomData)
             {
-                RandomFloat random = new RandomFloat();
+                Random random = new Random();
                 for (int i = 0; i < size; i++)
                 {
-                    
-                    ts.Enqueue(random.NextFloat(0, maxNumber));
+                    ts.Enqueue(GenRandFloat(0, maxNumber));
                 }
             }
             else
@@ -209,10 +209,10 @@ namespace TallerEstructuraDatosNG.Clases
 
             if (randomData)
             {
-                RandomFloat random = new RandomFloat();
+                Random random = new Random();
                 for (int i = 0; i < size; i++)
                 {
-                    ts.Push(random.NextFloat(0, maxNumber));
+                    ts.Push(GenRandFloat(0, maxNumber));
                 }
             }
             else
@@ -263,10 +263,10 @@ namespace TallerEstructuraDatosNG.Clases
             Dictionary<string, float> ts = new Dictionary<string, float>();
             if (randomData)
             {
-                RandomFloat random = new RandomFloat();
+                Random random = new Random();
                 for (int i = 0; i < size; i++)
                 {
-                    ts.Add(i.ToString(), random.NextFloat(0, maxNumber));
+                    ts.Add(i.ToString(), GenRandFloat(0, maxNumber));
                 }
             }
             else
@@ -292,28 +292,17 @@ namespace TallerEstructuraDatosNG.Clases
             return ts;
         }
 
-        
-        
+
+        public static float GenRandFloat(float min, float max )
+        {
+            Random random = new Random();
+            int floatBaseN = random.Next((int)min, (int)max);
+            float f = floatBaseN + (float)random.NextDouble();
+            return f;
+        }
 
     }
 
-    public class RandomFloat
-    {
-        Random random;
-        public RandomFloat()
-        {
-            random = new Random();
-        }
-
-        public float NextFloat(float min, float max)
-        {
-            double range = (double)max - (double)min;
-            double sample = random.NextDouble();
-            double scaled = (sample * range) + min;
-
-            return (float)scaled;
-        }
-    }
 
 
 

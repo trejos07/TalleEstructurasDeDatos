@@ -22,15 +22,9 @@ namespace TallerEstructuraDatosNG.Clases
             this.ints = ints;
             this.floats = floats;
             this.slots = slots;
-
-            Console.WriteLine("se creo un operado con los sigientes datos :");
-            Console.WriteLine("\n Lista de enteros : \n" + IntsToString(this.ints) + "\n");
-            Console.WriteLine("\n Lista de flotantes : \n" + FloatsToString(this.floats) + "\n");
-            Console.WriteLine("\n Lista de itemsSlot : \n" + SlotsToString(this.slots) + "\n");
-
         }
 
-        public string IntsToString(List<int> ts)
+        public string ListIntToString(List<int> ts)
         {
             string data = "";
             for (int i = 0; i < ts.Count; i++)
@@ -39,16 +33,16 @@ namespace TallerEstructuraDatosNG.Clases
             }
             return data;
         }
-        public string FloatsToString(List<float> ts)
+        public string ListFloatToString(List<float> ts)
         {
             string data = "";
             for (int i = 0; i < ts.Count; i++)
             {
-                data += ts[i].ToString("00.00") + ", ";
+                data += ts[i].ToString() + ", ";
             }
             return data;
         }
-        public string SlotsToString(List<Itemslot> ts)
+        public string ListSlotToString(List<Itemslot> ts)
         {
             string data = "";
             for (int i = 0; i < ts.Count; i++)
@@ -100,27 +94,31 @@ namespace TallerEstructuraDatosNG.Clases
                     {
                         int temp = lst[lst.Count - 1];
 
-                        for (int i = 0; i < lst.Count/ 2; i++)
+                        for (int i = 0; i < lst.Count - 1 / 2; i++)
                         {
                             a1.Add(lst[i]);
                         }
-                        for (int j = lst.Count/ 2; j < lst.Count-1; j++)
+                        for (int j = lst.Count - 1 / 2; j < lst.Count - 1; j++)
                         {
                             a2.Add(lst[j]);
                         }
-                        int sizes = lst.Count;
+                        int x = r.Next(0, lst.Count);
                         lst.Clear();
-                        lst.Add(temp);
-                        for (int i = 0; i < sizes-1; i += 2)
+                        for (int i = 0; i < lst.Count; i += 2)
                         {
                             lst.Add(a1[i / 2]);
                             lst.Add(a2[i / 2]);
+                            if (x % 2 == 0 && i == x || x % 2 == 1 && i - 1 == x)
+                            {
+                                lst.Add(temp);
+                                i++;
+                            }
                         }
                     }
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(ListIntToString(t));
             }
         }
         public void RemoveEven(out bool success, out List<int> t)
@@ -139,7 +137,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(ListIntToString(t));
             }
 
         }
@@ -160,7 +158,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(ListIntToString(t));
             }
         }
         public void Shuffle(out bool success, out List<int> t)
@@ -181,7 +179,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(ListIntToString(t));
             }
         }
         public void SortAscending(out bool success, out List<int> t)
@@ -208,7 +206,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = arr;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(ListIntToString(t));
             }
         }
         public void SortDescending(out bool success, out List<int> t)
@@ -235,13 +233,11 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = arr;
-                Console.WriteLine(IntsToString(t));
+                Console.WriteLine(ListIntToString(t));
             }
         }
         #endregion
 
-        
-        
         #region float
         public void PerfectShuffle(int iterations, out bool success, out List<float> t)
         {
@@ -292,19 +288,23 @@ namespace TallerEstructuraDatosNG.Clases
                         {
                             a2.Add(lst[j]);
                         }
-                        int sizes = lst.Count;
+                        int x = r.Next(0, lst.Count);
                         lst.Clear();
-                        lst.Add(temp);
-                        for (int i = 0; i < sizes-1; i += 2)
+                        for (int i = 0; i < lst.Count; i += 2)
                         {
                             lst.Add(a1[i / 2]);
                             lst.Add(a2[i / 2]);
+                            if (x % 2 == 0 && i == x || x % 2 == 1 && i - 1 == x)
+                            {
+                                lst.Add(temp);
+                                i++;
+                            }
                         }
                     }
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(ListFloatToString(t));
             }
         }
         public void RemoveEven(out bool success, out List<float> t)
@@ -323,7 +323,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(ListFloatToString(t));
             }
 
         }
@@ -344,7 +344,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(ListFloatToString(t));
             }
         }
         public void Shuffle(out bool success, out List<float> t)
@@ -365,7 +365,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(ListFloatToString(t));
             }
         }
         public void SortAscending(out bool success, out List<float> t)
@@ -392,7 +392,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = arr;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(ListFloatToString(t));
             }
         }
         public void SortDescending(out bool success, out List<float> t)
@@ -419,7 +419,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = arr;
-                Console.WriteLine(FloatsToString(t));
+                Console.WriteLine(ListFloatToString(t));
             }
         }
         #endregion
@@ -474,20 +474,23 @@ namespace TallerEstructuraDatosNG.Clases
                         {
                             a2.Add(lst[j]);
                         }
-                        int sizes = lst.Count;
+                        int x = r.Next(0, lst.Count);
                         lst.Clear();
-                        lst.Add(temp);
-
-                        for (int i = 0; i < sizes-1; i += 2)
+                        for (int i = 0; i < lst.Count; i += 2)
                         {
                             lst.Add(a1[i / 2]);
                             lst.Add(a2[i / 2]);
+                            if (x % 2 == 0 && i == x || x % 2 == 1 && i - 1 == x)
+                            {
+                                lst.Add(temp);
+                                i++;
+                            }
                         }
                     }
                 }
                 success = true;
                 t = lst;
-               Console.WriteLine(SlotsToString(t));
+               Console.WriteLine(ListSlotToString(t));
             }
         }
         public void RemoveEven(out bool success, out List<Itemslot> t)
@@ -506,7 +509,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(ListSlotToString(t));
             }
 
         }
@@ -527,7 +530,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(ListSlotToString(t));
             }
         }
         public void Shuffle(out bool success, out List<Itemslot> t)
@@ -548,7 +551,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = lst;
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(ListSlotToString(t));
             }
         }
         public void SortAscending(out bool success, out List<Itemslot> t)
@@ -575,7 +578,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = arr;
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(ListSlotToString(t));
             }
         }
         public void SortDescending(out bool success, out List<Itemslot> t)
@@ -602,29 +605,10 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = arr;
-                Console.WriteLine(SlotsToString(t));
+                Console.WriteLine(ListSlotToString(t));
             }
         }
         #endregion
-
-        public void PrintOriginal(Type type)
-        {
-            if (type == typeof(List<int>))
-            {
-                Console.WriteLine("La lista Original es :");
-                Console.WriteLine(IntsToString(ints));
-            }
-            if (type == typeof(List<float>))
-            {
-                Console.WriteLine("La lista Original es :");
-                Console.WriteLine(FloatsToString(floats));
-            }
-            if (type == typeof(List<Itemslot>))
-            {
-                Console.WriteLine("La lista Original es :");
-                Console.WriteLine(SlotsToString(slots));
-            }
-        }
 
     }
 }

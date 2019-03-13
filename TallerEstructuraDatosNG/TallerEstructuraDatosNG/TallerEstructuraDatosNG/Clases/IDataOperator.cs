@@ -15,10 +15,8 @@ namespace TallerEstructuraDatosNG.Clases
         void RemoveOdds(out bool success, out T t);
         void RemoveEven(out bool success, out T t);
         void PerfectShuffle(int iterations, out bool success, out T t);
-        void PrintOriginal(Type type);
+
         
-
-
 
     }
 }

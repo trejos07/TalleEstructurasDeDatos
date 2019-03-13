@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TallerEstructuraDatosNG.Clases
 {
-    public class QueueDataOperator: IDataOperator<Queue<int>>
+    public class QueueDataOperator: IDataOperator<Queue<int>>, IDataOperator<Queue<float>>, IDataOperator<Queue<Itemslot>>
     {
         Queue<int> ints;
         Queue<float> floats;
@@ -17,13 +17,18 @@ namespace TallerEstructuraDatosNG.Clases
             this.ints = ints;
             this.floats = floats;
             this.slots = slots;
+
+            Console.WriteLine("se creo un operado con los sigientes datos :");
+            Console.WriteLine("\n Queue de enteros : \n" + IntsToString(this.ints) + "\n");
+            Console.WriteLine("\n Queue de flotantes : \n" + FloatsToString(this.floats) + "\n");
+            Console.WriteLine("\n Queue de itemsSlot : \n" + SlotsToString(this.slots) + "\n");
         }
 
         public Queue<int> Ints { get => ints; set => ints = value; }
         public Queue<float> Floats { get => floats; set => floats = value; }
         public Queue<Itemslot> Slots { get => slots; set => slots = value; }
 
-        public string StackIntToString(Queue<int> ts)
+        public string IntsToString(Queue<int> ts)
         {
             string data = "";
             Queue<int> toprint = new Queue<int>(ts);
@@ -34,18 +39,18 @@ namespace TallerEstructuraDatosNG.Clases
             }
             return data;
         }
-        public string StackFloatToString(Queue<float> ts)
+        public string FloatsToString(Queue<float> ts)
         {
             string data = "";
             Queue<float> toprint = new Queue<float>(ts);
 
             while (toprint.Count > 0)
             {
-                data += toprint.Dequeue().ToString() + ", ";
+                data += toprint.Dequeue().ToString("00.00") + ", ";
             }
             return data;
         }
-        public string StackSlotToString(Queue<Itemslot> ts)
+        public string SlotsToString(Queue<Itemslot> ts)
         {
             string data = "";
             Queue<Itemslot> toprint = new Queue<Itemslot>(ts);
@@ -69,6 +74,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = false;
                 t = new Queue<int>(ts.OrderBy(x => x));
+                Console.WriteLine(IntsToString(t));
             }
         }
         public void SortDescending(out bool success, out Queue<int> t)
@@ -82,6 +88,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = false;
                 t = new Queue<int>(ts.OrderByDescending(x => x));
+                Console.WriteLine(IntsToString(t));
             }
         }
         public void Shuffle(out bool success, out Queue<int> t)
@@ -95,6 +102,7 @@ namespace TallerEstructuraDatosNG.Clases
                 Random rnd = new Random();
                 success = false;
                 t = new Queue<int>(ts.OrderBy(x => rnd.Next()));
+                Console.WriteLine(IntsToString(t));
 
             }
         }
@@ -122,6 +130,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
+                Console.WriteLine(IntsToString(t));
             }
         }
         public void RemoveEven(out bool success, out Queue<int> t)
@@ -148,6 +157,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
+                Console.WriteLine(IntsToString(t));
             }
         }
         public void PerfectShuffle(int iterations, out bool success, out Queue<int> t)
@@ -211,6 +221,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
+                Console.WriteLine(IntsToString(t));
             }
 
 
@@ -229,6 +240,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = false;
                 t = new Queue<float>(ts.OrderBy(x => x));
+                Console.WriteLine(FloatsToString(t));
             }
         }
         public void SortDescending(out bool success, out Queue<float> t)
@@ -242,6 +254,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = false;
                 t = new Queue<float>(ts.OrderByDescending(x => x));
+                Console.WriteLine(FloatsToString(t));
             }
         }
         public void Shuffle(out bool success, out Queue<float> t)
@@ -255,6 +268,7 @@ namespace TallerEstructuraDatosNG.Clases
                 Random rnd = new Random();
                 success = false;
                 t = new Queue<float>(ts.OrderBy(x => rnd.Next()));
+                Console.WriteLine(FloatsToString(t));
 
             }
         }
@@ -282,6 +296,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
+                Console.WriteLine(FloatsToString(t));
             }
         }
         public void RemoveEven(out bool success, out Queue<float> t)
@@ -308,6 +323,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
+                Console.WriteLine(FloatsToString(t));
             }
         }
         public void PerfectShuffle(int iterations, out bool success, out Queue<float> t)
@@ -370,6 +386,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
+                Console.WriteLine(FloatsToString(t));
             }
 
 
@@ -388,6 +405,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = false;
                 t = new Queue<Itemslot>(ts.OrderBy(x => x));
+                Console.WriteLine(SlotsToString(t));
             }
         }
         public void SortDescending(out bool success, out Queue<Itemslot> t)
@@ -401,6 +419,7 @@ namespace TallerEstructuraDatosNG.Clases
 
                 success = false;
                 t = new Queue<Itemslot>(ts.OrderByDescending(x => x));
+                Console.WriteLine(SlotsToString(t));
             }
         }
         public void Shuffle(out bool success, out Queue<Itemslot> t)
@@ -414,6 +433,7 @@ namespace TallerEstructuraDatosNG.Clases
                 Random rnd = new Random();
                 success = false;
                 t = new Queue<Itemslot>(ts.OrderBy(x => rnd.Next()));
+                Console.WriteLine(SlotsToString(t));
 
             }
         }
@@ -441,6 +461,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
+                Console.WriteLine(SlotsToString(t));
             }
         }
         public void RemoveEven(out bool success, out Queue<Itemslot> t)
@@ -467,6 +488,7 @@ namespace TallerEstructuraDatosNG.Clases
                 }
                 success = true;
                 t = ts;
+                Console.WriteLine(SlotsToString(t));
             }
         }
         public void PerfectShuffle(int iterations, out bool success, out Queue<Itemslot> t)
@@ -523,16 +545,38 @@ namespace TallerEstructuraDatosNG.Clases
                             if (t1.Count > 0)
                                 ts.Enqueue(t1.Dequeue());
                             if (t2.Count > 0)
-                                ts.Enqueue(t2.Dequeue());
+                                ts.Enqueue(t2
+                                    .Dequeue());
                         }
                     }
                 }
                 success = true;
                 t = ts;
+                Console.WriteLine(SlotsToString(t));    
             }
 
 
         }
         #endregion
+
+        public void PrintOriginal(Type type)
+        {
+            if (type == typeof(Queue<int>))
+            {
+                Console.WriteLine("La Queue Original es :");
+                Console.WriteLine(IntsToString(ints));
+            }
+            if (type == typeof(Queue<float>))
+            {
+                Console.WriteLine("La Queue Original es :");
+                Console.WriteLine(FloatsToString(floats));
+            }
+            if (type == typeof(Queue<Itemslot>))
+            {
+                Console.WriteLine("La Queue Original es :");
+                Console.WriteLine(SlotsToString(slots));
+            }
+        }
+
     }
 }

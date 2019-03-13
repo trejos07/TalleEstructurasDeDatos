@@ -16,12 +16,14 @@ namespace TallerEstructuraDatosNG
 
         static void Main(string[] args)
         {
+            ArrDataOpartor ArrO = new ArrDataOpartor(DataGenerator.PopulateArray(10, 100, true), DataGenerator.PopulateArray(10, 100f, true), DataGenerator.PopulateArray(10));
+            ListDataOperator LstO = new ListDataOperator(DataGenerator.PopulateList(10, 100, true), DataGenerator.PopulateList(10, 100f, true), DataGenerator.PopulateList(10));
+            StackDataOperator StkO = new StackDataOperator(DataGenerator.PopulateStack(10, 100, true), DataGenerator.PopulateStack(10, 100f, true), DataGenerator.PopulateStack(10));
+            QueueDataOperator QueO = new QueueDataOperator(DataGenerator.PopulateQueue(10, 100, true), DataGenerator.PopulateQueue(10, 100f, true), DataGenerator.PopulateQueue(10));
+            DictionaryDataOperator DicO = new DictionaryDataOperator(DataGenerator.PopulateDict(10, 100, true), DataGenerator.PopulateDict(10, 100f, true), DataGenerator.PopulateDict(10));
 
             #region Array
             Console.WriteLine("\n" + "------------------- Array Data Operator Test --------------------" + "\n");
-
-            ArrDataOpartor ArrO = new ArrDataOpartor(DataGenerator.PopulateArray(11, 100, false), DataGenerator.PopulateArray(10, 100f, true), DataGenerator.PopulateArray(10));
-            Console.ReadLine();
 
             Console.WriteLine("------------------- Int Test --------------------" + "\n");
             TestDataOperator<int[]>(ArrO);
@@ -34,9 +36,6 @@ namespace TallerEstructuraDatosNG
             #region List
             Console.WriteLine("\n" + "------------------- List Data Operator Test --------------------" + "\n");
 
-            ListDataOperator LstO = new ListDataOperator(DataGenerator.PopulateList(11, 100, false), DataGenerator.PopulateList(10, 100f, true), DataGenerator.PopulateList(10));
-            Console.ReadLine();
-
             Console.WriteLine("------------------- Int Test --------------------" + "\n");
             TestDataOperator<List<int>>(LstO);
             Console.WriteLine("------------------- Float Test --------------------" + "\n");
@@ -47,10 +46,6 @@ namespace TallerEstructuraDatosNG
 
             #region Stack
             Console.WriteLine("\n" + "------------------- Stack Data Operator Test --------------------" + "\n");
-
-            StackDataOperator StkO = new StackDataOperator(DataGenerator.PopulateStack(11, 100, false), DataGenerator.PopulateStack(10, 100f, true), DataGenerator.PopulateStack(10));
-            Console.ReadLine();
-
 
             Console.WriteLine("------------------- Int Test --------------------" + "\n");
             TestDataOperator<Stack<int>>(StkO);
@@ -63,9 +58,6 @@ namespace TallerEstructuraDatosNG
             #region Queue
             Console.WriteLine("\n" + "------------------- Queue Data Operator Test --------------------" + "\n");
 
-            QueueDataOperator QueO = new QueueDataOperator(DataGenerator.PopulateQueue(11, 100, false), DataGenerator.PopulateQueue(10, 100f, true), DataGenerator.PopulateQueue(10));
-            Console.ReadLine();
-
             Console.WriteLine("------------------- Int Test --------------------" + "\n");
             TestDataOperator<Queue<int>>(QueO);
             Console.WriteLine("------------------- Float Test --------------------" + "\n");
@@ -75,10 +67,7 @@ namespace TallerEstructuraDatosNG
             #endregion
 
             #region Dic
-            Console.WriteLine("\n" + "------------------- Dictionary Data Operator Test --------------------" + "\n");
-
-            DictionaryDataOperator DicO = new DictionaryDataOperator(DataGenerator.PopulateDict(11, 100, false), DataGenerator.PopulateDict(10, 100f, true), DataGenerator.PopulateDict(10));
-            Console.ReadLine();
+            Console.WriteLine("\n" + "------------------- Queue Data Operator Test --------------------" + "\n");
 
             Console.WriteLine("------------------- Int Test --------------------" + "\n");
             TestDataOperator<Dictionary<string,int>>(DicO);
@@ -92,19 +81,9 @@ namespace TallerEstructuraDatosNG
 
         public static void TestDataOperator<T>(IDataOperator<T> dataOperator)
         {
-            Console.WriteLine("\n");
-            dataOperator.PrintOriginal(typeof(T));
-            Console.WriteLine("\n");
-
             Test<T>("SortAscending", dataOperator.SortAscending);
             Test<T>("SortDescending", dataOperator.SortDescending);
             Test<T>("Shuffle", dataOperator.Shuffle);
-
-            Console.WriteLine("\n");
-            dataOperator.PrintOriginal(typeof(T));
-            Console.WriteLine("\n");
-
-
             TestPerfecShuffle<T>(1,"PerfectShuffle", dataOperator.PerfectShuffle);
             Test<T>("RemoveEven", dataOperator.RemoveEven);
             Test<T>("RemoveOdds", dataOperator.RemoveOdds);
@@ -112,28 +91,26 @@ namespace TallerEstructuraDatosNG
         }
         public static void Test<T> (string methodName, TestAction<T> method)
         {
-            Console.WriteLine("\n" + "------------------- test "+methodName+" --------------------" + "\n");
-            Console.WriteLine("Se ejecuta el metodo "+ methodName +" en la estructura : "+ typeof(T).Name+"\n");
+            Console.WriteLine(" se ejecuta el metodo "+ methodName +" en la estructura : "+ typeof(T).Name);
             bool succes = false;
             T methodsOut;
             method.Invoke(out succes, out methodsOut);
-            Console.WriteLine("\n"+"La operacion concluye con exito :" + succes);
+            Console.WriteLine("se pudo completar la operacion ? " + succes);
            
-            Console.WriteLine("\n" + "------------------- end test --------------------" + "\n");
+            Console.WriteLine("\n");
+
             Console.ReadLine(); 
         }
         public static void TestPerfecShuffle<T>(int iterations, string methodName, TestPShuffle<T> method)
         {
-            Console.WriteLine("\n" + "------------------- test " + methodName + " --------------------" + "\n");
-
-
-            Console.WriteLine("Se ejecuta el metodo "+ methodName +" en la estructura :"+ typeof(T).Name + "\n");
+            Console.WriteLine(" se ejecuta el metodo "+ methodName +" en la estructura :"+ typeof(T).Name);
             bool succes = false;
             T methodsOut;
             method.Invoke(iterations , out succes, out methodsOut);
-            Console.WriteLine("\n"+"La operacion concluye con exito :" + succes);
+            Console.WriteLine("se pudo completar la operacion ? " + succes);
            
-            Console.WriteLine("\n" + "------------------- end test --------------------" + "\n");
+            Console.WriteLine("\n");
+
             Console.ReadLine(); 
         }
 

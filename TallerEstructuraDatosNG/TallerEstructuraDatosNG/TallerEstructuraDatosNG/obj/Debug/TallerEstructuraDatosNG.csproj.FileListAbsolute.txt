@@ -12,18 +12,14 @@ c:/users/trejos07/source/repos/TallerEstructuraDatosNG/TallerEstructuraDatosNG/o
 /Users/SantiagoTrejos/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csproj.CoreCompileInputs.cache
 /Users/SantiagoTrejos/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.exe
 /Users/SantiagoTrejos/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.pdb
-/Volumes/NO NAME/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csprojAssemblyReference.cache
-/Volumes/NO NAME/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csproj.CoreCompileInputs.cache
-/Volumes/NO NAME/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.exe
-/Volumes/NO NAME/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.pdb
+C:/Users/Trejos07/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csprojAssemblyReference.cache
 C:/Users/Trejos07/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csproj.CoreCompileInputs.cache
 C:/Users/Trejos07/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.exe
 C:/Users/Trejos07/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.pdb
 C:/Users/Trejos07/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/bin/Debug/TallerEstructuraDatosNG.exe.config
 C:/Users/Trejos07/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/bin/Debug/TallerEstructuraDatosNG.exe
 C:/Users/Trejos07/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/bin/Debug/TallerEstructuraDatosNG.pdb
-C:/Users/Trejos07/Desktop/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csprojAssemblyReference.cache
-/Volumes/S_TREJOS/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csprojAssemblyReference.cache
-/Volumes/S_TREJOS/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csproj.CoreCompileInputs.cache
-/Volumes/S_TREJOS/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.exe
-/Volumes/S_TREJOS/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.pdb
+/Volumes/NO NAME/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csprojAssemblyReference.cache
+/Volumes/NO NAME/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.csproj.CoreCompileInputs.cache
+/Volumes/NO NAME/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.exe
+/Volumes/NO NAME/TallerEstructuraDatosNG/TallerEstructuraDatosNG/obj/Debug/TallerEstructuraDatosNG.pdb
