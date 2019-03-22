@@ -1,7 +1,9 @@
 # TalleEstructurasDeDatos
 
 este repositorio coresponde aun ejercicio de programacion enfocado en la operacion de diferentes estructuras de datos
-en esta aproximacion se decidio no hacerce de modo generico 
+en esta aproximacion se decidio no hacerce con un bajo acercacmiento a las clases y metodos genericos 
+se esta trabajando en inplementarlo completamente generico 
+
 
 Ejercicio: https://docs.google.com/document/d/13KJESEbypW3gB4oHnbTH-In_8VfImfOm6MQ9yZ_quSY/edit?usp=sharing
 
