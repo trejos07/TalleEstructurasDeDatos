@@ -1,6 +1,11 @@
 # TalleEstructurasDeDatos
 
-Descripcion: cada data operator contiene tres campos, un de cada tipo de dato, estos campos son collecciones que se asignan desde el constructor
+este repositorio coresponde aun ejercicio de programacion enfocado en la operacion de diferentes estructuras de datos
+en esta aproximacion se decidio no hacerce de modo generico 
+
+Ejercicio: https://docs.google.com/document/d/13KJESEbypW3gB4oHnbTH-In_8VfImfOm6MQ9yZ_quSY/edit?usp=sharing
+
+Descripcion del programa: cada data operator contiene tres campos, un de cada tipo de dato, estos campos son collecciones que se asignan desde el constructor
 o atraves de accesores, cada metodo de data operator hace uso de estos campos para su ejecucion
 
 Instrucciones: desde program.cs se corren unas prubas a cada funcion desarrollada, se espera que solo se modifiquen los parametros que se encargan
