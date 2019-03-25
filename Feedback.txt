@@ -1,0 +1,3 @@
+No estuvo la implementación de PerfectShuffle de diccionarios. Todo lo demás está bien
+
+NOTA: 4.8 / 5.0
